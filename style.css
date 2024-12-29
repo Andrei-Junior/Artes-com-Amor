@@ -56,61 +56,86 @@ body {
 
   /* Menu responsivo: hambúrguer */
   .hamburger {
-    display: none;
+    display: none; /* Escondido por padrão */
     flex-direction: column;
+    justify-content: center; /* Alinha os traços verticalmente */
     cursor: pointer;
+    z-index: 1070; /* Garante que o botão fique acima de outros elementos */
   }
-
+  
   .hamburger div {
     width: 25px;
     height: 3px;
-    background-color: #343b3b;
-    margin: 4px 0;
+    background-color: #343b3b; /* Cor dos traços */
+    margin: 4px 0; /* Espaçamento entre os traços */
+    border-radius: 2px; /* Bordas arredondadas para os traços */
   }
-
+  
   @media (max-width: 768px) {
     header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        z-index: 1060; /* Cabeçalho com o botão hambúrguer acima do menu */
+      flex-direction: row; /* Alinha a logo e o hambúrguer lado a lado */
+      justify-content: space-between; /* Espaça a logo e o hambúrguer */
+      align-items: center;
     }
-
-    .logo {
-        margin-bottom: 0;
-    }
-
+  
     nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #f8b400;
-        position: absolute;
-        top: 60px; /* Posiciona o menu logo abaixo do cabeçalho */
-        left: 0;
-        z-index: 1050; /* Menu abaixo do cabeçalho */
+      display: none; /* Esconde o menu padrão */
+      flex-direction: column;
+      width: 100%;
+      background-color: #f8b400;
+      position: absolute;
+      top: 60px; /* Posiciona abaixo do cabeçalho */
+      left: 0;
+      z-index: 1050;
     }
-
+  
     nav ul {
-        flex-direction: column;
+      flex-direction: column;
+      align-items: center;
     }
-
+  
     nav ul li {
-        margin: 10px 0;
-        text-align: center;
+      margin: 10px 0;
     }
-
-    .hamburger {
-        display: flex;
-        position: relative;
-        z-index: 1070; /* Garante que o botão hambúrguer fique acima do menu */
-    }
-
+  
     nav.active {
-        display: flex;
+      display: flex; /* Exibe o menu quando ativado */
     }
-}
+  
+    .hamburger {
+      display: flex; /* Mostra o hambúrguer em telas pequenas */
+    }
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .hamburger div {
+      width: 100%;
+      height: 3px;
+      background-color: #343b3b;
+      border-radius: 2px;
+      transition: all 0.3s ease; /* Transição suave */
+    }
+    
+    /* Efeito para o estado ativo (menu aberto) */
+    .hamburger.active div:nth-child(1) {
+      transform: translateY(8px) rotate(45deg); /* Linha superior vira diagonal */
+    }
+    
+    .hamburger.active div:nth-child(2) {
+      opacity: 0; /* Linha do meio desaparece */
+    }
+    
+    .hamburger.active div:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg); /* Linha inferior vira diagonal oposta */
+    }
+  }
 
 
 /* Estilo do carrossel */
@@ -272,4 +297,142 @@ body {
   }
 
 /*descriçao*/
+.image-text-section {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 20px !important;
+  min-height: 80vh !important; /* Altura mínima */
+  background-color: #f9f9f9 !important; /* Fundo opcional */
+}
+
+.content-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important; /* Espaço entre imagem e texto */
+  max-width: 1200px !important; /* Limita a largura */
+  width: 100% !important;
+}
+
+.image-container {
+  flex: 1 !important; /* Espaço proporcional */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.image-container img {
+  max-width: 100% !important; /* Responsividade */
+  height: auto !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.text-container {
+  flex: 1 !important;
+  text-align: center !important;
+}
+
+.text-container h2 {
+  font-size: 2rem !important;
+  margin-bottom: 10px !important;
+}
+
+.text-container p {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column !important; /* Empilha imagem e texto */
+    text-align: center !important; /* Centraliza conteúdo */
+  }
+
+  .image-container {
+    order: -1 !important; /* Garante que a imagem fique no topo */
+    margin-bottom: 20px !important; /* Espaçamento entre imagem e texto */
+  }
+
+  .image-container img {
+    max-width: 90% !important; /* Reduz largura da imagem */
+  }
+
+  .text-container {
+    text-align: center !important;
+  }
+}
+/*botao whatssap*/
+.image-text-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+  background-color: #f9f9f9;
+  margin-top: 1px;
+  height: 20px;;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.text-container {
+  flex: 1;
+  text-align: center;
+}
+
+.text-container p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 10px; /* Pequena margem abaixo do texto */
+  padding: 8px 16px;
+  background-color: #25d366;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128c7e;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-container {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  .image-container img {
+    max-width: 90%;
+  }
+
+  .text-container p {
+    font-size: 1.2rem; /* Tamanho de texto menor em telas pequenas */
+  }
+
+  .whatsapp-btn {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
 
