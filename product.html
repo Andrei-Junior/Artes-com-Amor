@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catalogo</title>
+    <link rel="shortcut icon" href="IMAGENS SITE/logo1.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+<!-- Cabeçalho com menu -->
+<header>
+    <div class="logo">
+      <img src="fotos-editada-site/propagandasite/LOGO/logosemfundo.png" alt="Logo da Empresa">
+    </div>
+    <nav id="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <!-- Botão de menu responsivo -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f8f8f8;
+      }
+  
+      .product-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+  
+      .product-container img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+  
+      .product-container h1 {
+        font-size: 2rem;
+        margin: 20px 0;
+      }
+  
+      .product-container p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
+  
+      .whatsapp-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #25d366;
+        color: white;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+  
+      .whatsapp-btn:hover {
+        background-color: #128c7e;
+      }
+  
+      /* Responsividade */
+      @media (max-width: 480px) {
+        .product-container h1 {
+          font-size: 1.5rem;
+        }
+  
+        .product-container p {
+          font-size: 1rem;
+        }
+  
+        .whatsapp-btn {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product-container">
+      <img id="productImage" src="" alt="Produto">
+      <h1 id="productName"></h1>
+      <p id="productPrice"></p>
+      <p id="productDescription"></p>
+      <a id="whatsappLink" class="whatsapp-btn" target="_blank">Contato no WhatsApp</a>
+    </div>
+    <footer class="footer">
+      <div class="footer-top-line"></div>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="fotos-editada-site/propagandasite/LOGO/logosemfundo.png" alt="Logo do Site">
+        </div>
+        <div class="footer-info">
+          <p>Contato: (55) 51982-25515</p>
+          <p><a href="https://www.seusite.com.br" target="_blank">www.seusite.com.br</a></p>
+        </div>
+      </div>
+  
+    <script>
+      // Obter parâmetros da URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const name = urlParams.get('name');
+      const price = urlParams.get('price');
+      const image = urlParams.get('image');
+      const description = urlParams.get('description');
+  
+      // Preencher os dados do produto
+      document.getElementById('productName').textContent = name;
+      document.getElementById('productPrice').textContent = `R$ ${price}`;
+      document.getElementById('productDescription').textContent = description;
+      document.getElementById('productImage').src = image;
+  
+      // Criar mensagem do WhatsApp
+      const whatsappMessage = `Olá! Estou interessado no produto "${name}" com valor de R$ ${price}.`;
+      const whatsappLink = `https://wa.me/555198225515?text=${encodeURIComponent(whatsappMessage)}`;
+      document.getElementById('whatsappLink').href = whatsappLink;
+    </script>
+  </body>
+  </html>
+  
+    
+</body>
+</html>
