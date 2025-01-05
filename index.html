@@ -32,46 +32,46 @@
 </header>
 
 <!-- Carrossel -->
-<section class="carousel-container">
-  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="fotos-editada-site/propagandasite/DESKTOP/banner desktop 1.png" class="carousel-img desktop-img" alt="Banner para telas maiores">
-        <img src="fotos-editada-site/propagandasite/MOVEL/1.png" class="carousel-img mobile-img" alt="Banner para telas menores">
-      </div>
-      <div class="carousel-item">
-        <img src="fotos-editada-site/propagandasite/DESKTOP/banner desktop 2.png" class="carousel-img desktop-img" alt="Banner para telas maiores">
-        <img src="fotos-editada-site/propagandasite/MOVEL/2.png " class="carousel-img mobile-img" alt="Banner para telas menores">
-      </div>
-      <div class="carousel-item">
-        <img src="fotos-editada-site/propagandasite/DESKTOP/banner desktop 3.png" class="carousel-img desktop-img" alt="Banner para telas maiores">
-        <img src="fotos-editada-site/propagandasite/MOVEL/3.png" class="carousel-img mobile-img" alt="Banner para telas menores">
-      </div>
-    </div>
-    <!-- Botões de navegação -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev" aria-label="Slide anterior">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next" aria-label="Próximo slide">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
+<div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-</section>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="fotos-editada-site/propagandasite/DESKTOP/banner desktop 1.png" class="d-block w-100" alt="Imagem 1">
+    </div>
+    <div class="carousel-item">
+      <img src="fotos-editada-site/propagandasite/DESKTOP/banner desktop 2.png" class="d-block w-100" alt="Imagem 2">
+    </div>
+    <div class="carousel-item">
+      <img src="fotos-editada-site/propagandasite/DESKTOP/banner desktop 3.png" class="d-block w-100" alt="Imagem 3">
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Próximo</span>
+  </button>
+</div>
 
 <!-- Qualidades -->
-<section class="qualities">
-  <article class="quality">
-    <div class="quality-emoji"></div>
-    <p class="quality-text">Qualidade excepcional em nossos produtos</p>
-  </article>
-  <article class="quality">
-    <div class="quality-emoji"></div>
-    <p class="quality-text">Entrega rápida e confiável</p>
-  </article>
-  <article class="quality">
-    <div class="quality-emoji"></div>
-    <p class="quality-text">Atendimento profissional e dedicado</p>
-  </article>
+<section class="message-block">
+  <div class="message-item">
+    <span class="message-icon">🏡</span>
+    <p class="message-text">Montamos na sua casa</p>
+  </div>
+  <div class="message-item">
+    <span class="message-icon">📐</span>
+    <p class="message-text">Faremos seu projeto</p>
+  </div>
+  <div class="message-item">
+    <span class="message-icon">✅</span>
+    <p class="message-text">Qualidade garantida</p>
+  </div>
 </section>
 
 <!-- Cards -->
