@@ -232,6 +232,7 @@ body {
   padding: 20px !important;
   min-height: 80vh !important; /* Altura mínima */
   background-color: #BCF74D !important; /* Fundo opcional */
+  margin: 20px;
 }
 
 .content-container {
