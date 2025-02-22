@@ -84,119 +84,67 @@
   .hamburger {
     z-index: 1070; /* Garante que o botão fique acima */
   }
-
-
-
-
-</style>
-
-
     </style>
   </head>
 <body>
-<!-- Cabeçalho com menu -->
-<header>
-  <div class="logo">
-    <a href="index.html"><img src="fotos-editada-site/propagandasite/LOGO/logosemfundo.png" alt="Logo da Empresa"></a>
-  </div>
-  <nav id="menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="catalogtodos.html">Catalogo</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
-  <!-- Botão de menu responsivo -->
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
+
+  <!--cabeçalho-->
+<header class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+      <a class="navbar-brand" href="index.html">
+          <img src="fotos-editada-site/propagandasite/LOGO/logosemfundo.png" alt="Logo" class="img-fluid" style="max-height: 50px; width: auto;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="catalogtodos.html">Catálogo</a></li>
+              <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+          </ul>
+      </div>
   </div>
 </header>
+<section class="hero text-center py-5" style="background: linear-gradient(to right, #4CAF50, #2E7D32); color: white;">
+  <div class="container">
+      <h1 class="fw-bold">Artes com Amor</h1>
+      <p class="lead">Produtos artesanais feitos com dedicação e carinho.</p>
+      <a href="catalogtodos.html" class="btn btn-light btn-lg">Ver Catálogo</a>
+  </div>
+</section>
 
-    <div class="product-container">
-      <img id="productImage" src="" alt="Produto">
-      <h1 id="productName"></h1>
-      <p id="productPrice"></p>
-      <p id="productDescription"></p>
-      <a id="whatsappLink" class="whatsapp-btn" target="_blank">Contato no WhatsApp</a>
-    </div>
-    <footer class="footer">
-      <div class="footer-top-line"></div>
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="fotos-editada-site/propagandasite/LOGO/logosemfundo.png" alt="Logo do Site">
-        </div>
-        <div class="footer-info">
-          <p>Contato: (55) 51982-25515</p>
-          <p><a href="https://www.seusite.com.br" target="_blank">www.seusite.com.br</a></p>
-        </div>
-      </div>
-      <button id="backToTopBtn" onclick="scrollToTop()">↑</button>
-  
-    <script>
-      // Obter parâmetros da URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const name = urlParams.get('name');
-      const price = urlParams.get('price');
-      const image = urlParams.get('image');
-      const description = urlParams.get('description');
-  
-      // Preencher os dados do produto
-      document.getElementById('productName').textContent = name;
-      document.getElementById('productPrice').textContent = `R$ ${price}`;
-      document.getElementById('productDescription').textContent = description;
-      document.getElementById('productImage').src = image;
-  
-      // Criar mensagem do WhatsApp
-      const whatsappMessage = `Olá! Estou interessado no produto "${name}" com valor de R$ ${price}.`;
-      const whatsappLink = `https://wa.me/555198225515?text=${encodeURIComponent(whatsappMessage)}`;
-      document.getElementById('whatsappLink').href = whatsappLink;
-    </script>
-     <!--menu-->
-     <script>     
-          function toggleMenu() {
-          const menu = document.querySelector('nav');
-          const hamburger = document.querySelector('.hamburger');
-
-          // Alternar classes para abrir/fechar menu
-          menu.classList.toggle('active');
-          hamburger.classList.toggle('active');
-        }
-
-        // Fechar o menu ao clicar fora
-        document.addEventListener('click', function (event) {
-          const menu = document.querySelector('nav');
-          const hamburger = document.querySelector('.hamburger');
-
-          // Verifica se o clique foi fora do menu ou do hambúrguer
-          if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-            menu.classList.remove('active');
-            hamburger.classList.remove('active');
-          }
-        });
-    </script>
-        <script>// Obtém o botão
-          var backToTopBtn = document.getElementById("backToTopBtn");
-          
-          // Mostra o botão quando rolar para baixo
-          window.onscroll = function() {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-              backToTopBtn.style.display = "block";
-            } else {
-              backToTopBtn.style.display = "none";
-            }
-          };
-          
-          // Função para rolar até o topo
-          function scrollToTop() {
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth'  // Rolar suavemente
-            });
-          }
-          </script>
-  
+<div class="product-container">
+  <img id="productImage" src="" alt="Produto">
+  <h1 id="productName"></h1>
+  <p id="productPrice"></p>
+  <p id="productDescription"></p>
+  <a id="whatsappLink" class="whatsapp-btn" target="_blank">Contato no WhatsApp</a>
+</div>
+    <!--rodape-->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+  <p class="mb-0">&copy; 2025 Artes com Amor. Todos os direitos reservados.</p>
+</footer>
     
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Obter parâmetros da URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const name = urlParams.get('name');
+  const price = urlParams.get('price');
+  const image = urlParams.get('image');
+  const description = urlParams.get('description');
+
+  // Preencher os dados do produto
+  document.getElementById('productName').textContent = name;
+  document.getElementById('productPrice').textContent = `R$ ${price}`;
+  document.getElementById('productDescription').textContent = description;
+  document.getElementById('productImage').src = image;
+
+  // Criar mensagem do WhatsApp
+  const whatsappMessage = `Olá! Estou interessado no produto "${name}" com valor de R$ ${price}.`;
+  const whatsappLink = `https://wa.me/555198225515?text=${encodeURIComponent(whatsappMessage)}`;
+  document.getElementById('whatsappLink').href = whatsappLink;
+</script>
 </body>
 </html>

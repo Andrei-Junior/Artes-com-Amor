@@ -8,292 +8,6 @@ body {
   margin-top: 5em;
 }
 
-  /* Estilo do cabeçalho e menu */
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-    color: #000000;
-  }
-  
-  .logo img {
-    height: 3em;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #343b3b;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    color: #724DF7;
-  }
-  
-  /* Menu responsivo: hambúrguer */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 24px;
-    cursor: pointer;
-    z-index: 1070;
-  }
-  
-  .hamburger div {
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    border-radius: 3px;
-    transition: all 0.4s ease;
-  }
-  
-  @media (max-width: 768px) {
-    header {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    nav {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #f1f1f1;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      z-index: 1050;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-  
-    nav ul {
-      flex-direction: column;
-      align-items: center;
-      margin: 0;
-      padding: 20px 0;
-    }
-  
-    nav ul li {
-      margin: 10px 0;
-    }
-  
-    nav.active {
-      display: flex;
-    }
-  
-    .hamburger {
-      display: flex;
-    }
-  
-    /* Estado ativo do hambúrguer */
-    .hamburger.active div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-  
-    .hamburger.active div:nth-child(2) {
-      opacity: 0;
-    }
-  
-    .hamburger.active div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-  }
-  
-
-  /* estilo qualidade*/
-  .message-block {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Alinha verticalmente */
-    gap: 10px; /* Espaçamento entre os itens */
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    max-width: 100%; /* Garante que ocupe todo o espaço disponível */
-    margin: 0 auto; /* Centraliza o bloco */
-    flex-wrap: wrap; /* Permite que o conteúdo se ajuste quando necessário */
-    text-align: center; /* Centraliza o texto dentro de cada item */
-    
-  }
-  
-  .message-item {
-    display: flex;
-    flex-direction: column; /* Faz o ícone e o texto ficarem um abaixo do outro */
-    align-items: center; /* Centraliza o conteúdo */
-    max-width: 100px; /* Garante que o conteúdo não ultrapasse essa largura */
-  }
-  
-  .message-icon img{
-    height:4em; /* Tamanho do emoji */
-    margin-bottom: 5px; /* Espaço entre o ícone e o texto */
-  }
-  
-  .message-text {
-    font-size: 0.9rem; /* Reduz o tamanho da fonte */
-    color: #333;
-  }
-  
-  /* Responsividade para telas pequenas */
-  @media (max-width: 768px) {
-    .message-block {
-      flex-direction: row; /* Garante que os itens fiquem lado a lado em telas pequenas */
-      gap: 10px; /* Reduz o espaçamento entre os itens */
-    }
-  
-    .message-item {
-      max-width: 80px; /* Tamanho menor para os itens */
-    }
-  
-    .message-icon img{
-      height:2rem; /* Reduz o tamanho do ícone */
-    }
-  
-    .message-text {
-      font-size: 0.8rem; /* Diminui o tamanho da fonte para caber melhor em telas pequenas */
-    }
-  }
-
-  /* Estilo do card */
-  .inline-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centraliza os cards */
-    gap: 10px; /* Espaço entre os cards */
-    padding: 20px;
-  }
-
-  /* Estilo de cada card */
-  .card {
-    flex: 1 1 calc(33.333% - 20px); /* Cada card ocupa 1/3 do espaço disponível */
-    max-width: calc(33.333% - 20px);
-    box-sizing: border-box;
-    height: 400px; /* Altura fixa dos cards */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza o conteúdo do card */
-    overflow: hidden;
-    margin-top:0px;
-    border:none;
-  }
-
-  /* Estilo da imagem dentro do card */
-  .card-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px; /* Arredondamento nas bordas */
-    object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
-  }
-
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .card {
-      flex: 1 1 calc(50% - 10px); /* Dois cards por linha em telas médias */
-      max-width: calc(50% - 10px);
-      margin-top: 1em;
-    }
-    .card {
-      height: 200px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .card {
-      flex: 1 1 100%; /* Um card por linha em telas pequenas */
-      max-width: 100%;
-    }
-  }
-
-/*descriçao*/
-.image-text-section {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  padding: 20px !important;
-  min-height: 80vh !important; /* Altura mínima */
-  background-color: #BCF74D !important; /* Fundo opcional */
-  margin: 20px;
-}
-
-.content-container {
-  display: flex !important;
-  align-items: center !important;
-  gap: 20px !important; /* Espaço entre imagem e texto */
-  max-width: 1200px !important; /* Limita a largura */
-  width: 100% !important;
-}
-
-.image-container {
-  flex: 1 !important; /* Espaço proporcional */
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-.image-container img {
-  max-width: 100% !important; /* Responsividade */
-  height: auto !important;
-  border-radius: 10px !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
-}
-
-.text-container {
-  flex: 1 !important;
-  text-align: center !important;
-}
-
-.text-container h2 {
-  font-size: 2rem !important;
-  margin-bottom: 10px !important;
-}
-
-.text-container p {
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-  color: rgb(0, 0, 0);
-}
-
-/* Ajustes para telas menores */
-@media (max-width: 768px) {
-  .content-container {
-    flex-direction: column !important; /* Empilha imagem e texto */
-    text-align: center !important; /* Centraliza conteúdo */
-  }
-
-  .image-container {
-    order: -1 !important; /* Garante que a imagem fique no topo */
-    margin-bottom: 20px !important; /* Espaçamento entre imagem e texto */
-  }
-
-  .image-container img {
-    max-width: 90% !important; /* Reduz largura da imagem */
-  }
-
-  .text-container {
-    text-align: center !important;
-  }
-}
-
 /* Catálogo */
 .catalog {
   display: flex;
@@ -349,86 +63,78 @@ body {
   }
 }
 
-/*footer*/
-/* Rodapé */
-.footer {
-  background-color: #f1f1f1;
-  padding: 20px 0;
-  margin-top: 50px;
+
+
+/*qualidades(index)*/
+/* Estilos para a sidebar */
+.sidebar {
+  background-color:#4CAF50;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #000000;
 }
 
-.footer-top-line {
-  height: 5px;
-  background-color: #4D83F7; /* Cor da linha superior */
+.sidebar h2 {
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+.sidebar img {
   width: 100%;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  flex-wrap: wrap;
-}
-
-.footer-logo img {
-  max-width: 150px;
   height: auto;
+  border-radius: 8px;
 }
 
-.footer-info {
-  text-align: right;
-  font-size: 0.9rem;
-  line-height: 1.5;
+/* Estilos para o conteúdo principal */
+.content {
+  
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
 }
 
-.footer-info a {
-  color: #4D83F7;
-  text-decoration: none;
-  font-weight: bold;
+.content p {
+  margin-top: 10px;
 }
 
-.footer-info a:hover {
-  text-decoration: underline;
+.content h2 {
+  font-size: 2rem;
+  color: #333;
+  display: inline;
 }
 
+/* Responsividade: ajustes para telas menores */
 @media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
+  .sidebar, .content {
+      padding: 15px;
   }
-  .footer-info {
-    text-align: center;
-    margin-top: 15px;
-  }
+
+.content {
+  padding: 5px;
+}
+}
+
+/*formulario*/
+.linha-central {
+  width: 80%; /* Define a largura da linha */
+  height: 4px; /* Espessura da linha */
+  background: linear-gradient(to right, #4CAF50, #2E7D32); /* Cor com gradiente */
+  margin: 40px auto; /* Centraliza a linha */
+  border-radius: 5px; /* Borda arredondada */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Efeito de sombra */
+}
+
+/* Estilo do botão */
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 /*voltar ao topo*/
 body {
   font-family: Arial, sans-serif;
 }
-
-#backToTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 15px;
-  padding: 10px 15px;
-  background-color: #616878;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: none; /* Inicialmente invisível */
-  font-size: 1.5em;
-}
-
-#backToTopBtn:hover {
-  background-color: #0056b3;
-}
-
-
-
-
-
